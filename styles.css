@@ -1,0 +1,216 @@
+body {
+    margin: 0;
+    font-family: Arial, "Times New Roman",serif;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #beeeff;
+}
+
+
+.content {
+    display: flex;
+    align-items: center;
+    flex: auto;
+}
+
+.main {
+    background: linear-gradient(to right, #0c2336,#171614);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+    height: 900px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -450px;
+    overflow: hidden;
+    border-radius: 32px;
+}
+
+.operation-list {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    padding-bottom: 20px;
+    overflow-y: auto;
+}
+
+.operation {
+    display: flex;
+    font-size: 2rem;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    flex-direction: column;
+    margin-left: auto;
+    color: #B0B0B0;
+}
+
+.input, .result {
+    font-size: 3rem;
+    color: white;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+}
+
+.cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background: white;
+  animation: blink 1s step-start infinite;
+  vertical-align: bottom;
+  pointer-events: none; /* Prevents blocking clicks */
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.1s forwards ease-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.1s forwards ease-in;
+}
+
+@keyframes slideUp {
+  to {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+.keypad {
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.button {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    background: linear-gradient(to right,#1c2f40, #262f38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 32px;
+    font-size: 2.5rem;
+    color: #2fa5fc;
+    width: 105px;
+}
+
+.button:active {
+    border: 1px solid #FFFFFF;
+    margin: -1px;
+}
+
+.button:hover {
+    background: #111;
+}
+
+.button-active {
+    border: 1px solid #FFFFFF;
+    margin: -1px;
+    background: #111;
+}
+
+#Enter {
+    background: linear-gradient(#89CFF0, #0096FF);
+    grid-row-start: 4;
+    grid-row-end: 6; 
+    grid-column-start: 4;
+    grid-column-end: 5;
+    color: aliceblue;
+}
+
+#Enter:hover {
+    background: linear-gradient(#b2dbee, #43b0ff);
+    color: rgb(163, 168, 173);
+}
+
+#\-, #\+, #\*, #\/ {
+    background: linear-gradient(#015cb1, #015db1);
+    color: aliceblue;
+}
+
+#\-:hover, #\+:hover, #\*:hover, #\/:hover {
+    background: #0084ff;
+
+}
+
+#\30 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    width: 225px;
+}
+
+#Backspace, #Escape {
+    font-family: Arial,sans-serif;
+    color: #bcbec1;
+    background: linear-gradient(to left, #41494e, #25282b);
+}
+
+#Backspace:hover, #Escape:hover {
+    background: linear-gradient(to left, #596369, #282a2b);
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: auto;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+}
+
+p {
+    box-sizing: border-box;
+}
+
+.github-logo {
+    display: block;
+    max-width: 28px;
+    max-height: 28px;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 5px;
+}
+
+.github-logo:hover {
+    transform: rotate(360deg) scale(1.2);
+}
